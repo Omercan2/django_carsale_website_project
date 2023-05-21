@@ -15,34 +15,38 @@
             Kayıt Ol
         </div>
 
-        <div class="form">
-            <div class="input_field">
-                <input type="text" placeholder="İsim" class="input">
-                
-            </div>
-            <div class="input_field">
-                <input type="text" placeholder="Soyisim" class="input">
-                
-            </div>
-            <div class="input_field">
-                <input type="text" placeholder="E-mail" class="input">
-                
-            </div>
-            <div class="input_field">
-                <input type="password" placeholder="Şifre" class="input">
-                
-            </div>
-            <div class="input_field">
-                <input type="password" placeholder="Şifre Onay" class="input">
-                
+        <form class="form" method="POST">
+            {% csrf_token %}
+            {% if error%}
+                <div class="alert alert-danger">
+                    {{error}}
                 </div>
-                <div class="btn">
-                    <a href="#">Kayıt Ol</a>
-                </div>
+            {% endif %}
+            <div class="input_field">
+                <input type="text" placeholder="Kullanıcı Adı" class="input" name="username">  
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="E-mail" class="input" name="email">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="İsim" class="input" name="firstname">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Soyisim" class="input" name="lastname">
+            </div>
+            <div class="input_field">
+                <input type="password" placeholder="Şifre" class="input" name="password">
+            </div>
+            <div class="input_field">
+                <input type="password" placeholder="Şifre Onay" class="input" name="repassword">
+            </div>
+            <input type="submit" value="Kayıt Ol" class="btn">
+            
+
             </div>
             
             
-        </div>
+        </form>
     </div>
 </body>
 </html>

@@ -25,26 +25,30 @@
             Giriş Yap
         </div>
 
-        <div class="form">
+        <form class="form"  method="POST">
+            {% csrf_token %}
+            {% if error%}
+                <div class="alert alert-danger">
+                    {{error}}
+                </div>
+            {% endif %}
             <div class="input_field">
-                <input type="text" placeholder="E-mail" class="input">
-                
+                <input type="text" placeholder="Username" class="input" name="username">
             </div>
             
             <div class="input_field">
-                <input type="password" placeholder="Şifre" class="input">
+                <input type="password" placeholder="Şifre" class="input" name="password">
                 
                 </div>
                 <div>
                     <input type="checkbox" class="remember"><p class="rememberp">Beni hatırla</p>  
                 </div>
-                <div class="btn">
-                    <a href="#">Giriş Yap</a>
-                </div>
+                    <input type="submit" value="Giriş Yap" class="btn">
+
             </div>
             
             
-        </div>
+        </form>
     </div>
 </body>
 </html>

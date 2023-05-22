@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 
@@ -52,3 +52,25 @@ def logout_request(request):
 
 def home_request(request):
     return render(request,"uyelikler/home.html")
+
+
+def info_request(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        email = request.POST["email"]
+        firstname = request.POST["firstname"]
+        lastname = request.POST["lastname"]
+        password = request.POST["password"]
+        repassword = request.POST["repassword"]
+
+        if password == repassword:
+            user = get_object_or_404(User, username=username)
+            user.email = email
+            user.first_name = firstname
+            user.last_name = lastname
+            user.set_password(password)
+            user.save()
+            return redirect("user_home")
+        else:
+            return render(request, "uyelikler/info.html", {"error": "Parola eşleşmiyor."})
+    return render(request, "uyelikler/info.html", {"user": request.user})

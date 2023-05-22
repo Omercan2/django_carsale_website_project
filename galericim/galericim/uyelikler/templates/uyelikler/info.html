@@ -12,10 +12,10 @@
 <body>
     <div class="wrapper">
         <div class="title">
-            Kayıt Ol
+            Bilgilerim
         </div>
 
-        <form class="form" method="POST">
+        <form class="form" method="POST" action="{% url 'info' %}">
             {% csrf_token %}
             {% if error%}
                 <div class="alert alert-danger">
@@ -23,27 +23,25 @@
                 </div>
             {% endif %}
             <div class="input_field">
-                <input type="text" placeholder="Kullanıcı Adı" class="input" name="username">  
+                <input type="text" placeholder="Kullanıcı Adı" class="input" name="username" value="{{ user.username }}">  
             </div>
             <div class="input_field">
-                <input type="text" placeholder="E-mail" class="input" name="email">
+                <input type="text" placeholder="E-mail" class="input" name="email" value="{{ user.email }}">
             </div>
             <div class="input_field">
-                <input type="text" placeholder="İsim" class="input" name="firstname">
+                <input type="text" placeholder="İsim" class="input" name="firstname" value="{{ user.first_name }}">
             </div>
             <div class="input_field">
-                <input type="text" placeholder="Soyisim" class="input" name="lastname">
+                <input type="text" placeholder="Soyisim" class="input" name="lastname" value="{{ user.last_name }}">
             </div>
             <div class="input_field">
-                <input type="password" placeholder="Şifre" class="input" name="password">
+                <input type="password" placeholder="Şifre" class="input" name="password" value="{{ user.password }}">
             </div>
             <div class="input_field">
-                <input type="password" placeholder="Şifre Onay" class="input" name="repassword">
+                <input type="password" placeholder="Şifre Onay" class="input" name="repassword" value="{{ user.password }}">
             </div>
             
-                <input type="submit" value="Kayıt Ol" class="btn">
-            
-            
+            <input type="submit" value="Güncelle" class="btn">
             
 
             </div>

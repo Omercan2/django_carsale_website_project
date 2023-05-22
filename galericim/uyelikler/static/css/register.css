@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+    font-size: 15px;
+}
+body {
+    background: #565657;
+    font-family: 'Open Sans', sans-serif;
+}
+.wrapper{
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding: 60px 45px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+.title:hover{
+    cursor: default;
+}
+.title{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #313132;
+}
+
+.form .input_field:hover{
+    transition: .4s;
+    border-left: 3px solid red;
+}
+.form .input_field{
+
+    width: 90%;
+    padding: 12px;
+    padding-left: 30px;
+    border: none;
+    background: #eeee;
+    position: relative;
+    margin-bottom: 10px; 
+    border-left: 3px solid #313132;
+}
+.form .input_field .input{
+
+    width: 90%;
+    padding: 12px;
+    padding-left: 5px;
+    border: none;
+    background-color: #eeee;
+}
+a:hover{
+
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+.btn{
+
+    background-color: #313132;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    border-radius: 25px;
+    margin: 20px auto 0;
+    padding: 12px;
+}
+.input:focus{
+    outline: none;
+    border-left: 3px solid red;
+    border: 1px solid #eeee;
+
+}
+.btn:hover{ 
+    background-color: black;
+
+    transition: .5s;
+}

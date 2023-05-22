@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            İlan Ver
+        </div>
+
+        <form class="form" method="POST" action="{% url 'advert' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="input_field">
+                <input type="text" placeholder="Fotoğraf Linki" class="input"name="resim_linki">
+                
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Model" class="input" name="model">
+                
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="İlan Başlığı" class="input" name="ilan_basli">
+                
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Kilometre" class="input" name="km">
+                
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Fiyat" class="input" name="fiyat">
+                
+            </div>
+            <input type="submit" value="İlan Ver" class="btn">
+                
+            </div>
+            
+            
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+   
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">galericim.com</label>
+      <ul>
+        <li><a href="{% url 'advert' %}">İlan Ver</a></li>
+        <li><a href="{% url 'info' %}">Bilgilerim</a></li>
+        <li><a href="{% url 'logout' %}">Çıkış Yap</a></li>
+        
+      </ul>
+    </nav>
+
+    
+
+
+    <div class="container">
+        <div class="card-body">
+            <div class="card-header">
+              <h2>İlanlar</h2>
+              
+            </div>            
+            <hr>
+            <table class="table">
+                
+                    <tr class="table-row">
+                      <th scope="col">Fotoğraf</th>
+                      <th scope="col">Marka</th>
+                      <th scope="col">İlan Başlığı</th>
+                      <th scope="col">KM</th>
+                      <th scope="col">Fiyat</th> 
+                    </tr>
+                  
+                  
+                  
+                    <!-- <tr> //her araba geldiginde eklenecek olan bolum
+                        <td><img src="" class="thumbnail"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr> -->
+                      {% for ilan in ilanlar %}
+                      <tr>
+                        <td><img src="{{ ilan.resim_linki }}" class="thumbnail"></td>
+                        <td>{{ ilan.model }}</td>
+                        <td>{{ ilan.ilan_basli }}</td>
+                        <td>{{ ilan.km }}</td>
+                        <td>{{ ilan.fiyat }}</td>
+                      </tr>
+                      {% endfor %}
+                
+
+            </table>
+            
+
+        </div>
+        
+    </div>
+
+
+
+    
+</body>
+</html>

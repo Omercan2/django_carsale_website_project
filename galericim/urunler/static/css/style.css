@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+*{
+    box-sizing: border-box;/* this add padding and border to size*/
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color: #f9fafb;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0;
+}
+
+.container{
+    margin-top: 5rem;
+    background-color: #313132;
+    color: #f9fafb;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 1100px;
+    
+    padding: 20px;
+}
+h2{
+    display: inline;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body{
+    width: 100%;
+}
+
+.table{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+th{
+    margin: 10px 0px 10px 0px;
+}
+td{
+    height: 80px;
+    
+    padding: 0;
+    margin: 0;
+}
+
+.thumbnail{
+    max-width: 250px;
+    width: 100%;
+    height: 100%;
+}
+/*berkayın css*/
+
+.main header{
+    
+    display: inline-block;
+    
+    min-height: 0;
+}
+
+nav {
+	background: #313132;
+	height: 80px;
+	width: 100%;
+}
+label.logo {
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding: 0 100px;
+	font-weight: bold;
+}
+nav ul {
+	float: right;
+	margin-right: 20px;
+}
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+}
+a {
+    
+    text-decoration: none;
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	
+    margin-bottom: 5px;
+}
+a.active, a:hover {
+    cursor: pointer;
+	background: #000000;
+	transition: .5s;
+}
+.checkbtn {
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+#check {
+	display: none;
+}
+
+th{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
